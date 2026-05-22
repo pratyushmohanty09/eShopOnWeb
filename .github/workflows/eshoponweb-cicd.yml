@@ -1,15 +1,15 @@
 name: eShopOnWeb Build and Test
 
 #Triggers (uncomment line below to use it)
-#on: [push, workflow_dispatch]
+on: [push, workflow_dispatch]
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
-  RESOURCE-GROUP: rg-eshoponweb-NAME
-  LOCATION: westeurope
+  RESOURCE-GROUP: rg-devOps-eshopeonweb-2238752
+  LOCATION: canadacentral
   TEMPLATE-FILE: infra/webapp.bicep
-  SUBSCRIPTION-ID: YOUR-SUBS-ID
-  WEBAPP-NAME: eshoponweb-webapp-NAME
+  SUBSCRIPTION-ID: 26a8a718-78b0-4b09-a2c5-091ab45f9452c
+  WEBAPP-NAME: eshoponweb-webapp-2238752
 
 
 jobs:
@@ -94,8 +94,8 @@ jobs:
       uses: Azure/webapps-deploy@v3
       with:
         type: ZIP
-        app-name: ${{ env.WEBAPP-NAME  }}
-        package: .net-app/app.zip
+        app-name: ${{ eshoponweb-webapp-2238752   }}
+c        package: .net-app/app.zip
 
     # Publish website to Azure App Service using CLI (WebApp)
     - name: Publish Website to WebApp
